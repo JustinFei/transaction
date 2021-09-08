@@ -1,0 +1,116 @@
+.transaction-page {
+    display: inline-block;
+    width: 90%;
+    .transaction-title {
+        text-align: left;
+        font-weight: inherit;
+    }
+
+    .transaction-divider {
+        border-top: 1px solid #111111;
+    }
+
+    .transaction-table {
+        width: 100%;
+        display: flex;
+        font-weight: inherit;
+        .transaction-table-filter {
+            width: 20%;
+            margin-left: 5px;
+            text-align: left;
+
+            .account-name-filter, .transaction-type-filter {
+                display: inline-grid;
+                width: calc(100% - 25px);
+                padding: 3px;
+                background-color: #f3f2f2;
+            }
+
+            .transaction-type-filter {
+                margin-top: 20px;
+            }
+
+            .account-name-filter>span, .transaction-type-filter>span {
+                margin-left: 7px;
+            }
+
+            span {
+                padding: 2px;
+            }
+
+            span:last-child {
+                margin-bottom: 20px;
+            }
+
+            span span {
+                padding-left: 5px;
+                text-transform: capitalize;
+            }
+
+            h4 {
+                margin: initial;
+                padding: 10px;
+            }
+        }
+
+        .transaction-table-content {
+            width: 80%;
+            table {
+                width: 100%;
+                text-align: left;
+
+                td, th {
+                    // border: 1px solid #ddd;
+                    padding: 5px;
+                }
+
+                tr:hover {
+                    background-color: #ddd;
+                }
+
+                tr>td:last-child {
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+    .transaction-table::after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+
+    .transaction-detail-wrapper {
+        padding: 3px;
+        text-align: left;
+
+        div:first-child {
+            margin-top: 15px;
+        }
+
+        div {
+            display: flex;
+
+            span:first-child {
+                margin: 7px;
+                font-weight: 600;
+            }
+
+            span {
+                margin: 7px 0;
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class="transaction-table"] {
+      display: block !important;
+  }
+  [class*="transaction-table-"] {
+    width: 90% !important;
+  }
+}
